@@ -1,0 +1,22 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          # Local Git repository for development.
+          # Replace CONFIG_GIT_URI with your GitHub configuration repository in shared environments.
+          uri: file:///D:/Projects/spring-ai/enterprise-ai-platform-milestone-1/configuration-repo
+          default-label: master
+          clone-on-start: true
+          refresh-rate: 30
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
